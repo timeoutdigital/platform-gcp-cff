@@ -72,6 +72,7 @@ locals {
   }
   folder_ids = merge(
     {
+      data-platform      = try(module.branch-dp-folder.0.id, null)
       data-platform-dev  = try(module.branch-dp-dev-folder.0.id, null)
       data-platform-prod = try(module.branch-dp-prod-folder.0.id, null)
       gke-dev            = try(module.branch-gke-dev-folder.0.id, null)
