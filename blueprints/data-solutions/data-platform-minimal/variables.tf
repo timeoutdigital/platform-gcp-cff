@@ -183,5 +183,5 @@ variable "tag_values" {
 }
 
 variable "extra_composer_env_obj_admin" {
-  type    = sting
+  type    = string
 }
