@@ -25,7 +25,7 @@ locals {
     "roles/dataflow.worker"                           = [module.processing-sa-0.iam_email]
     "roles/composer.environmentAndStorageObjectAdmin" = [
       local.groups_iam.data-engineers,
-      "serviceAccount:tosbx-staging-dt-prc-aws-sa-0@tosbx-staging-dt-prc.iam.gserviceaccount.com"
+      var.extra_composer_env_obj_admin
     ]
     "roles/composer.ServiceAgentV2Ext" = [
       "serviceAccount:${module.processing-project.service_accounts.robots.composer}"
