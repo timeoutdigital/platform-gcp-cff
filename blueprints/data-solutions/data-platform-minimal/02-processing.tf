@@ -33,6 +33,9 @@ locals {
     "roles/composer.worker" = [
       module.processing-sa-cmp-0.iam_email
     ]
+    "roles/dataform.admin" = [
+      module.processing-sa-0.iam_email
+    ]
     "roles/dataproc.editor" = [
       module.processing-sa-cmp-0.iam_email
     ]
