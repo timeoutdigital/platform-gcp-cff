@@ -89,6 +89,7 @@ module "processing-project" {
     "dataform.googleapis.com",
     "dataproc.googleapis.com",
     "iam.googleapis.com",
+    "searchconsole.googleapis.com",
     "servicenetworking.googleapis.com",
     "serviceusage.googleapis.com",
     "stackdriver.googleapis.com",
