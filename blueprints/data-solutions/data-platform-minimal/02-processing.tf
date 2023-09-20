@@ -93,6 +93,7 @@ module "processing-project" {
     "dataproc.googleapis.com",
     "iam.googleapis.com",
     "searchconsole.googleapis.com",
+    "secretmanager.googleapis.com",
     "servicenetworking.googleapis.com",
     "serviceusage.googleapis.com",
     "stackdriver.googleapis.com",
