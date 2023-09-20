@@ -18,7 +18,11 @@ locals {
   iam_processing = {
     "roles/bigquery.jobUser" = [
       module.processing-sa-cmp-0.iam_email,
-      module.processing-sa-0.iam_email
+      module.processing-sa-0.iam_email,
+      "serviceAccount:${module.processing-project.service_accounts.robots.dataform}"
+    ]
+    "roles/bigquery.dataEditor" = [
+      "serviceAccount:${module.processing-project.service_accounts.robots.dataform}"
     ]
     "roles/composer.admin"                            = [local.groups_iam.data-engineers]
     "roles/dataflow.admin"                            = [module.processing-sa-cmp-0.iam_email]
