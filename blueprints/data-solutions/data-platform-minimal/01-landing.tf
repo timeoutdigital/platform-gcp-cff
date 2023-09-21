@@ -20,6 +20,8 @@ locals {
     "roles/storage.objectViewer"  = [module.processing-sa-cmp-0.iam_email]
     "roles/storage.objectAdmin"   = [module.processing-sa-0.iam_email]
     "roles/bigquery.admin"        = [module.processing-sa-0.iam_email]
+    "roles/bigquery.jobUser"   = [local.groups_iam.data-engineers]
+    "roles/bigquery.dataEditor"   = [local.groups_iam.data-engineers]
     "roles/bigquery.dataViewer"   = ["serviceAccount:${module.processing-project.service_accounts.robots.dataform}"]
   }
 }
