@@ -16,6 +16,7 @@
 
 locals {
   cur_iam = {
+    "roles/bigquery.dataEditor" = ["serviceAccount:${module.processing-project.service_accounts.robots.dataform}"]
     "roles/bigquery.dataOwner" = [module.processing-sa-0.iam_email]
     "roles/bigquery.dataViewer" = [
       module.cur-sa-0.iam_email,
