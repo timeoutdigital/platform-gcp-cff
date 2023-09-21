@@ -16,6 +16,7 @@
 
 locals {
   iam_processing = {
+    "roles/bigquery.admin" = [module.processing-sa-0.iam_email]
     "roles/bigquery.jobUser" = [
       module.processing-sa-cmp-0.iam_email,
       module.processing-sa-0.iam_email,
