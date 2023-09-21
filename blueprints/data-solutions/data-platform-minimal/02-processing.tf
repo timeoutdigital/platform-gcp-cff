@@ -21,7 +21,7 @@ locals {
       local.groups_iam.data-engineers
       module.processing-sa-cmp-0.iam_email,
       module.processing-sa-0.iam_email,
-      "serviceAccount:${module.processing-project.service_accounts.robots.dataform}",
+      "serviceAccount:${module.processing-project.service_accounts.robots.dataform}"
     ]
     "roles/bigquery.dataEditor" = [
       local.groups_iam.data-engineers,
