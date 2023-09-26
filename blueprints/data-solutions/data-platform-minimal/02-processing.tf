@@ -20,9 +20,11 @@ locals {
     "roles/bigquery.jobUser" = [
       module.processing-sa-cmp-0.iam_email,
       module.processing-sa-0.iam_email,
+      local.groups_iam.data-engineers,
       "serviceAccount:${module.processing-project.service_accounts.robots.dataform}"
     ]
     "roles/bigquery.dataEditor" = [
+      local.groups_iam.data-engineers,
       "serviceAccount:${module.processing-project.service_accounts.robots.dataform}"
     ]
     "roles/composer.admin"                            = [local.groups_iam.data-engineers]
@@ -39,6 +41,7 @@ locals {
       module.processing-sa-cmp-0.iam_email
     ]
     "roles/dataform.admin" = [
+      "serviceAccount:tog-staging-dt-prc-aws-sa-0@tog-staging-dt-prc.iam.gserviceaccount.com"
       module.processing-sa-0.iam_email
     ]
     "roles/dataproc.editor" = [
