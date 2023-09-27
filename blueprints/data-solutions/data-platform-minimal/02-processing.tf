@@ -21,11 +21,11 @@ locals {
       module.processing-sa-cmp-0.iam_email,
       module.processing-sa-0.iam_email,
       local.groups_iam.data-engineers,
-      "serviceAccount:${module.processing-project.service_accounts.robots.dataform}"
+      "serviceAccount:service-${var.dataform_project_number}@gcp-sa-dataform.iam.gserviceaccount.com"
     ]
     "roles/bigquery.dataEditor" = [
       local.groups_iam.data-engineers,
-      "serviceAccount:${module.processing-project.service_accounts.robots.dataform}"
+      "serviceAccount:service-${var.dataform_project_number}@gcp-sa-dataform.iam.gserviceaccount.com"
     ]
     "roles/composer.admin"                            = [local.groups_iam.data-engineers]
     "roles/dataflow.admin"                            = [module.processing-sa-cmp-0.iam_email]

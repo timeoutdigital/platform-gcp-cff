@@ -182,3 +182,8 @@ variable "extra_composer_env_obj_admin" {
   type    = string
   default = null
 }
+
+variable "dataform_project_number" {
+  description = "Number of the project containing DataForm repos"
+  type        = string
+}
