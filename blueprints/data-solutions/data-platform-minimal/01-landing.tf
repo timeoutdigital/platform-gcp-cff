@@ -20,7 +20,7 @@ locals {
     "roles/storage.objectViewer"  = [module.processing-sa-cmp-0.iam_email]
     "roles/storage.objectAdmin"   = [module.processing-sa-0.iam_email]
     "roles/bigquery.admin"        = [module.processing-sa-0.iam_email]
-    "roles/bigquery.dataViewer"   = ["serviceAccount:service-${var.dataform_project_number}@gcp-sa-dataform.iam.gserviceaccount.com"]
+    "roles/bigquery.dataViewer"   = [local.dataform_sa_iam_email]
   }
 }
 

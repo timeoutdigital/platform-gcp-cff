@@ -23,4 +23,5 @@ locals {
   }
   project_suffix = var.project_suffix == null ? "" : "-${var.project_suffix}"
   use_shared_vpc = var.network_config.host_project != null
+  dataform_sa_iam_email = "serviceAccount:service-${var.dataform_project_number}@gcp-sa-dataform.iam.gserviceaccount.com"
 }
