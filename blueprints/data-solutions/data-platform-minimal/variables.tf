@@ -187,3 +187,8 @@ variable "dataform_project_number" {
   description = "Number of the project containing DataForm repos"
   type        = string
 }
+
+variable "aws_sa" {
+  description = "SA used by AWS CICD"
+  type        = string
+}

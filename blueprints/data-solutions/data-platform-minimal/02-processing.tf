@@ -32,7 +32,7 @@ locals {
     "roles/dataflow.worker"                           = [module.processing-sa-0.iam_email]
     "roles/composer.environmentAndStorageObjectAdmin" = [
       local.groups_iam.data-engineers,
-      var.extra_composer_env_obj_admin
+      "serviceAccount:${var.aws_sa}"
     ]
     "roles/composer.ServiceAgentV2Ext" = [
       "serviceAccount:${module.processing-project.service_accounts.robots.composer}"
