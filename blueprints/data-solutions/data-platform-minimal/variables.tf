@@ -178,10 +178,6 @@ variable "service_encryption_keys" {
   default  = {}
 }
 
-variable "tag_values" {
-  type    = map(string)
-}
-
 variable "extra_composer_env_obj_admin" {
   type    = string
   default = null
