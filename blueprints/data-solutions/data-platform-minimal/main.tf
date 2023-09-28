@@ -15,6 +15,8 @@
 # tfdoc:file:description Core locals.
 
 locals {
+  aws_sa_iam_email = "serviceAccount:${var.aws_sa_email}"
+  dataform_sa_iam_email = "serviceAccount:service-${var.dataform_project_number}@gcp-sa-dataform.iam.gserviceaccount.com"
   groups = {
     for k, v in var.groups : k => "${v}@${var.organization_domain}"
   }
@@ -23,5 +25,4 @@ locals {
   }
   project_suffix = var.project_suffix == null ? "" : "-${var.project_suffix}"
   use_shared_vpc = var.network_config.host_project != null
-  dataform_sa_iam_email = "serviceAccount:service-${var.dataform_project_number}@gcp-sa-dataform.iam.gserviceaccount.com"
 }

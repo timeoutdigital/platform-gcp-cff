@@ -21,27 +21,22 @@ locals {
       module.processing-sa-cmp-0.iam_email,
       module.processing-sa-0.iam_email,
       local.groups_iam.data-engineers,
-      local.dataform_sa_iam_email
     ]
     "roles/bigquery.dataEditor" = [
       local.groups_iam.data-engineers,
-      local.dataform_sa_iam_email
     ]
     "roles/composer.admin"                            = [local.groups_iam.data-engineers]
     "roles/dataflow.admin"                            = [module.processing-sa-cmp-0.iam_email]
     "roles/dataflow.worker"                           = [module.processing-sa-0.iam_email]
     "roles/composer.environmentAndStorageObjectAdmin" = [
       local.groups_iam.data-engineers,
-      "serviceAccount:${var.aws_sa}"
+      local.aws_sa_iam_email
     ]
     "roles/composer.ServiceAgentV2Ext" = [
       "serviceAccount:${module.processing-project.service_accounts.robots.composer}"
     ]
     "roles/composer.worker" = [
       module.processing-sa-cmp-0.iam_email
-    ]
-    "roles/dataform.admin" = [
-      module.processing-sa-0.iam_email
     ]
     "roles/dataproc.editor" = [
       module.processing-sa-cmp-0.iam_email
@@ -96,7 +91,6 @@ module "processing-project" {
     "compute.googleapis.com",
     "container.googleapis.com",
     "dataflow.googleapis.com",
-    "dataform.googleapis.com",
     "dataproc.googleapis.com",
     "iam.googleapis.com",
     "searchconsole.googleapis.com",
