@@ -41,7 +41,6 @@ locals {
       module.processing-sa-cmp-0.iam_email
     ]
     "roles/dataform.admin" = [
-      "serviceAccount:tog-staging-dt-prc-aws-sa-0@tog-staging-dt-prc.iam.gserviceaccount.com",
       module.processing-sa-0.iam_email
     ]
     "roles/dataproc.editor" = [
