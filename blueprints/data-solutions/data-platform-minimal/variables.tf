@@ -14,6 +14,11 @@
 
 # tfdoc:file:description Terraform Variables.
 
+variable "aws_sa_email" {
+  description = "SA used by AWS CICD"
+  type        = string
+}
+
 variable "composer_config" {
   description = "Cloud Composer config."
   type = object({
@@ -67,6 +72,11 @@ variable "data_force_destroy" {
   description = "Flag to set 'force_destroy' on data services like BiguQery or Cloud Storage."
   type        = bool
   default     = false
+}
+
+variable "dataform_project_number" {
+  description = "Number of the project containing DataForm repos"
+  type        = string
 }
 
 variable "enable_services" {
@@ -176,12 +186,4 @@ variable "service_encryption_keys" {
   })
   nullable = false
   default  = {}
-}
-
-variable "tag_values" {
-  type    = map(string)
-}
-
-variable "extra_composer_env_obj_admin" {
-  type    = string
 }

@@ -15,6 +15,8 @@
 # tfdoc:file:description Core locals.
 
 locals {
+  aws_sa_iam_email = "serviceAccount:${var.aws_sa_email}"
+  dataform_sa_iam_email = "serviceAccount:service-${var.dataform_project_number}@gcp-sa-dataform.iam.gserviceaccount.com"
   groups = {
     for k, v in var.groups : k => "${v}@${var.organization_domain}"
   }

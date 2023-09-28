@@ -19,8 +19,8 @@ locals {
     "roles/storage.objectCreator" = [module.land-sa-0.iam_email]
     "roles/storage.objectViewer"  = [module.processing-sa-cmp-0.iam_email]
     "roles/storage.objectAdmin"   = [module.processing-sa-0.iam_email]
-    "roles/bigquery.admin"        = [module.processing-sa-0.iam_email]
-    "roles/bigquery.dataViewer"   = ["serviceAccount:${module.processing-project.service_accounts.robots.dataform}"]
+    "roles/bigquery.dataEditor"   = [module.processing-sa-0.iam_email]
+    "roles/bigquery.dataViewer"   = [local.dataform_sa_iam_email]
   }
 }
 
