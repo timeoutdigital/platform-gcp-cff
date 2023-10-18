@@ -104,6 +104,11 @@ variable "location" {
   default     = "eu"
 }
 
+variable "looker_sa_email" {
+  description = "SA used by looker"
+  type        = string
+}
+
 variable "network_config" {
   description = "Shared VPC network configurations to use. If null networks will be created in projects."
   type = object({

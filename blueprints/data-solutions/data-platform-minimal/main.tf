@@ -23,6 +23,7 @@ locals {
   groups_iam = {
     for k, v in local.groups : k => "group:${v}"
   }
+  looker_sa_iam_email = "serviceAccount:${var.looker_sa_email}"
   project_suffix = var.project_suffix == null ? "" : "-${var.project_suffix}"
   use_shared_vpc = var.network_config.host_project != null
 }
