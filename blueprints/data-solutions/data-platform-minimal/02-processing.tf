@@ -75,6 +75,7 @@ module "processing-project" {
     "bigquery.googleapis.com",
     "bigqueryreservation.googleapis.com",
     "bigquerystorage.googleapis.com",
+    "chromeuxreport.googleapis.com",
     "cloudkms.googleapis.com",
     "cloudresourcemanager.googleapis.com",
     "composer.googleapis.com",
