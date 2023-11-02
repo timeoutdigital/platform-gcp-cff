@@ -25,7 +25,8 @@ locals {
       local.looker_sa_iam_email
     ]
    "roles/bigquery.jobUser" = [
-     local.looker_sa_iam_email
+     local.looker_sa_iam_email,
+     module.processing-sa-0.iam_email
    ]
   }
 }
