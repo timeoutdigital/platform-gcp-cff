@@ -16,7 +16,7 @@
 
 locals {
   cur_iam = {
-    "roles/bigquery.dataOwner"  = [module.processing-sa-0.iam_email]
+    "roles/bigquery.dataOwner" = [module.processing-sa-0.iam_email]
     "roles/bigquery.dataViewer" = [
       module.cur-sa-0.iam_email,
       local.groups_iam.data-analysts,
