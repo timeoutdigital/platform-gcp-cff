@@ -21,8 +21,8 @@ locals {
     "roles/storage.objectAdmin"   = [module.processing-sa-0.iam_email]
     "roles/bigquery.dataEditor"   = [module.processing-sa-0.iam_email]
     "roles/bigquery.dataViewer" = [
-      local.dataform_sa_iam_email,
       local.groups_iam.data-engineers,
+      local.dataform_sa_iam_email,
       local.looker_sa_iam_email
     ]
    "roles/bigquery.jobUser" = [
