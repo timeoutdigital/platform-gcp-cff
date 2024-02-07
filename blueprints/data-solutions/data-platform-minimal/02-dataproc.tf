@@ -33,6 +33,7 @@ module "processing-sa-0" {
   display_name = "Processing service account"
   iam = {
     "roles/iam.serviceAccountTokenCreator" = [
+      local.dataform_sa_iam_email,
       local.groups_iam.data-engineers,
       module.processing-sa-cmp-0.iam_email
     ],
