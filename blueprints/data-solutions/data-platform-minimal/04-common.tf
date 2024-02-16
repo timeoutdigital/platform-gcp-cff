@@ -26,7 +26,8 @@ locals {
     "roles/datacatalog.admin" = [local.groups_iam.data-security]
     "roles/datacatalog.viewer" = [
       module.processing-sa-0.iam_email,
-      local.groups_iam.data-analysts
+      local.groups_iam.data-analysts,
+      local.groups_iam.data-engineers
     ]
     "roles/datacatalog.categoryFineGrainedReader" = [
       module.processing-sa-0.iam_email
