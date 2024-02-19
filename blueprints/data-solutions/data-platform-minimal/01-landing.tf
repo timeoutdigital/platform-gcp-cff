@@ -30,6 +30,9 @@ locals {
      local.looker_sa_iam_email,
      module.processing-sa-0.iam_email
    ]
+   (module.land-project.custom_roles.bigqueryTableSetCategory) = [
+     module.processing-sa-0.iam_email
+   ]
   }
 }
 
@@ -44,6 +47,11 @@ module "land-project" {
     ? var.project_config.project_ids.landing
     : "${var.project_config.project_ids.landing}${local.project_suffix}"
   )
+  custom_roles = {
+    "bigqueryTableSetCategory" = [
+      "bigquery.tables.setCategory"
+    ]
+  }
   iam          = var.project_config.billing_account_id != null ? local.iam_lnd : null
   iam_additive = var.project_config.billing_account_id == null ? local.iam_lnd : null
   services = [
