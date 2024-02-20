@@ -61,13 +61,11 @@ output "projects" {
   description = "GCP Projects information."
   value = {
     project_number = {
-      common     = module.common-project.number
       curated    = module.cur-project.number
       landing    = module.land-project.number
       processing = module.processing-project.number
     }
     project_id = {
-      common     = module.common-project.project_id
       curated    = module.cur-project.project_id
       landing    = module.land-project.project_id
       processing = module.processing-project.project_id
