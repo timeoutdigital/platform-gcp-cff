@@ -48,6 +48,7 @@ module "land-project" {
   iam_additive = var.project_config.billing_account_id == null ? local.iam_lnd : null
   services = [
     "bigquery.googleapis.com",
+    "bigquerydatatransfer.googleapis.com",
     "bigqueryreservation.googleapis.com",
     "bigquerystorage.googleapis.com",
     "cloudkms.googleapis.com",
