@@ -83,11 +83,13 @@ module "processing-project" {
     "container.googleapis.com",
     "dataflow.googleapis.com",
     "dataproc.googleapis.com",
+    "drive.googleapis.com",
     "iam.googleapis.com",
     "searchconsole.googleapis.com",
     "secretmanager.googleapis.com",
     "servicenetworking.googleapis.com",
     "serviceusage.googleapis.com",
+    "sheets.googleapis.com",
     "stackdriver.googleapis.com",
     "storage.googleapis.com",
     "storage-component.googleapis.com"
