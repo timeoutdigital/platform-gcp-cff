@@ -21,14 +21,16 @@ locals {
       module.cur-sa-0.iam_email,
       local.groups_iam.data-analysts,
       local.groups_iam.data-engineers,
-      local.looker_sa_iam_email
+      local.looker_sa_iam_email,
+      "user:reporting-admin@timeout.com"
     ]
     "roles/bigquery.jobUser" = [
       module.processing-sa-0.iam_email, # Remove once bug is fixed. https://github.com/apache/airflow/issues/32106
       module.cur-sa-0.iam_email,
       local.groups_iam.data-analysts,
       local.groups_iam.data-engineers,
-      local.looker_sa_iam_email
+      local.looker_sa_iam_email,
+      "user:reporting-admin@timeout.com"
     ]
     "roles/datacatalog.tagTemplateViewer" = [
       module.cur-sa-0.iam_email,
